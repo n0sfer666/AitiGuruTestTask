@@ -1,0 +1,125 @@
+@use "~assets" as *;
+@use "sass:color";
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page {
+  min-height: 100vh;
+  padding: 30px;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: $color-bg-secondary;
+
+  @include respond-to(md) {
+    padding: 30px;
+  }
+}
+
+.searchWrapper {
+  width: 100%;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: $spacing-md;
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.tableTitle {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  color: $color-text-primary;
+}
+
+.tableActions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  @include flex-center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+  padding: $spacing-md;
+}
+
+.modalContent {
+  background-color: $color-background;
+  border-radius: $border-radius-lg;
+  padding: $spacing-md;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: $shadow-lg;
+  animation: slideUp 0.3s ease;
+
+  @include respond-to(md) {
+    padding: $spacing-lg;
+  }
+}
+
+.error {
+  text-align: center;
+  padding: $spacing-lg;
+
+  @include respond-to(md) {
+    padding: $spacing-xl;
+  }
+}
+
+.errorText {
+  color: $color-danger;
+  margin-bottom: $spacing-md;
+  font-size: $font-size-base;
+}
+
+.loading {
+  @include flex-center;
+  min-height: 200px;
+
+  @include respond-to(md) {
+    min-height: 300px;
+  }
+}
+
+.paginationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: $spacing-lg;
+  padding: $spacing-md 0;
+  border-top: 1px solid $color-border;
+}

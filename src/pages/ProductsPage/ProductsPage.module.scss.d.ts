@@ -1,0 +1,14 @@
+export declare const error: string;
+export declare const errorText: string;
+export declare const fadeIn: string;
+export declare const loading: string;
+export declare const modal: string;
+export declare const modalContent: string;
+export declare const page: string;
+export declare const paginationContainer: string;
+export declare const searchWrapper: string;
+export declare const slideUp: string;
+export declare const tableActions: string;
+export declare const tableHeader: string;
+export declare const tableTitle: string;
+export declare const toolbar: string;

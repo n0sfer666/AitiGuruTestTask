@@ -1,0 +1,11 @@
+export declare const base: string;
+export declare const danger: string;
+export declare const disabled: string;
+export declare const fullWidth: string;
+export declare const ghost: string;
+export declare const icon: string;
+export declare const large: string;
+export declare const medium: string;
+export declare const primary: string;
+export declare const secondary: string;
+export declare const small: string;

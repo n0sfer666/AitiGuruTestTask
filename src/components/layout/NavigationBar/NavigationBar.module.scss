@@ -1,0 +1,29 @@
+@use "~assets" as *;
+
+.bar {
+  width: 100%;
+  height: 105px;
+  background-color: $color-background;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  color: $color-text-primary;
+}
+
+.actions {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 22%;
+  left: 20%;
+  width: 60vw;
+  gap: $spacing-md;
+}

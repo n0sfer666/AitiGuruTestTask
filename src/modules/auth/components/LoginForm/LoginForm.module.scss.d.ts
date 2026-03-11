@@ -1,0 +1,13 @@
+export declare const checkboxWrapper: string;
+export declare const divider: string;
+export declare const error: string;
+export declare const fields: string;
+export declare const footer: string;
+export declare const form: string;
+export declare const header: string;
+export declare const innerFrame: string;
+export declare const link: string;
+export declare const logo: string;
+export declare const submit: string;
+export declare const subtitle: string;
+export declare const title: string;

@@ -1,0 +1,14 @@
+@use "~assets" as *;
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-bg-tertiary;
+  padding: $spacing-md;
+}
+
+.container {
+  width: 527px;
+}

@@ -1,0 +1,156 @@
+@use "~assets" as *;
+@use "sass:color";
+
+/* Main form container - matches Figma "content" frame */
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 527px;
+  background-color: $color-background;
+  border-radius: $border-radius-3xl; // 40px per Figma
+  box-shadow: $shadow-card; // 0 24px 32px rgba(0,0,0,0.04)
+  padding: 6px; // Creates the outer padding effect
+}
+
+/* Inner frame - matches Figma "Frame 2" with gradient border effect */
+.innerFrame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 34px; // Per Figma inner frame
+  padding: 48px;
+
+  /* Gradient fill: rgba(35,35,35,0.03) at top, transparent at 50% */
+  background: linear-gradient(
+    180deg,
+    rgba(35, 35, 35, 0.03) 0%,
+    transparent 50%
+  );
+
+  /* Gradient border/stroke effect */
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 34px;
+    padding: 1px;
+    background: linear-gradient(180deg, #ebebeb 20%, transparent 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px; // Space between logo, title, subtitle per Figma
+  margin-bottom: 32px; // Figma itemSpacing
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.error {
+  background-color: rgba($color-danger, 0.1);
+  color: $color-danger;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-md;
+  margin-bottom: 32px; // Figma itemSpacing
+  font-size: $font-size-sm;
+  text-align: center;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; // Figma itemSpacing
+  margin-bottom: 32px; // Figma itemSpacing
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px; // Figma itemSpacing
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkboxWrapper {
+  margin-bottom: 32px; // Figma itemSpacing
+}
+
+.submit {
+  margin-bottom: 32px; // Figma itemSpacing
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px; // Figma itemSpacing
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: $color-border;
+  }
+
+  // Target Typography component with higher specificity
+  // Using .divider.divider to increase selector priority over Typography colors
+  &.divider p,
+  &.divider span {
+    padding: 0 $spacing-sm;
+    font-size: $font-size-sm;
+    color: $color-text-muted; // Muted gray color as per Figma
+  }
+}
+
+.footer {
+  text-align: center;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.link {
+  color: $color-primary;
+  font-weight: 600;
+  text-decoration: underline; // Always underlined per Figma
+
+  &:hover {
+    color: color.adjust($color-primary, $lightness: -10%);
+  }
+}

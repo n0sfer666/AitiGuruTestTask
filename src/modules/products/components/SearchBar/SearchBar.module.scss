@@ -1,0 +1,22 @@
+@use "~assets" as *;
+
+.wrapper {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  height: 56px;
+  background-color: $color-bg-secondary;
+  border: none;
+  border-radius: $border-radius-md;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: none;
+  }
+}

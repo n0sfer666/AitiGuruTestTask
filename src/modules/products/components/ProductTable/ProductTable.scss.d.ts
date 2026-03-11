@@ -1,0 +1,9 @@
+export declare const productTable: string;
+export declare const productTableEmpty: string;
+export declare const productTableHeader: string;
+export declare const productTableHeaderImage: string;
+export declare const productTableLoading: string;
+export declare const productTableRating: string;
+export declare const productTableRatingLow: string;
+export declare const productTableThumbnail: string;
+export declare const productTableTitle: string;

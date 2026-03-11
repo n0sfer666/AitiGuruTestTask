@@ -1,0 +1,9 @@
+// Конвертация px в rem
+@function px-to-rem($px, $base: 16) {
+  @return calc($px / $base) * 1rem;
+}
+
+// Получение цвета из палитры с вариацией
+@function color($color, $variant: 'base') {
+  @return map-get(map-get($colors, $color), $variant);
+}

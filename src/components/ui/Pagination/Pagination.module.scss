@@ -1,0 +1,71 @@
+@use "~assets" as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-sm;
+  color: $color-text-secondary;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: $color-gray-100;
+    border-color: $color-gray-300;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.pageNumbers {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.pageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 $spacing-sm;
+  background: transparent;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-sm;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(.active) {
+    background-color: $color-gray-100;
+    border-color: $color-gray-300;
+  }
+
+  &.active {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: white;
+  }
+}

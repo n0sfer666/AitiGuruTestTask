@@ -1,0 +1,17 @@
+export declare const actions: string;
+export declare const actionsCell: string;
+export declare const addButton: string;
+export declare const articleCell: string;
+export declare const brandCell: string;
+export declare const category: string;
+export declare const checkboxCell: string;
+export declare const lowRating: string;
+export declare const moreButton: string;
+export declare const nameCell: string;
+export declare const priceCell: string;
+export declare const productDetails: string;
+export declare const productInfo: string;
+export declare const rating: string;
+export declare const ratingCell: string;
+export declare const thumbnail: string;
+export declare const title: string;

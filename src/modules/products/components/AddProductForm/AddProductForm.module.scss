@@ -1,0 +1,25 @@
+@use "~assets" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-lg;
+  background-color: $color-background;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+}

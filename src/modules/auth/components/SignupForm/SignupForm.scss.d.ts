@@ -1,0 +1,13 @@
+export declare const signupForm: string;
+export declare const signupFormCheckboxWrapper: string;
+export declare const signupFormDivider: string;
+export declare const signupFormError: string;
+export declare const signupFormFields: string;
+export declare const signupFormFooter: string;
+export declare const signupFormHeader: string;
+export declare const signupFormLink: string;
+export declare const signupFormLogo: string;
+export declare const signupFormRow: string;
+export declare const signupFormSubmit: string;
+export declare const signupFormSubtitle: string;
+export declare const signupFormTitle: string;

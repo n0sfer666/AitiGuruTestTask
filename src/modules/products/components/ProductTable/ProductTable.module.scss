@@ -1,0 +1,159 @@
+@use "~assets" as *;
+@use "sass:color";
+
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: $font-size-sm;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-sm;
+    background: $color-background;
+    overflow: hidden;
+  }
+
+  thead {
+    background-color: $color-bg-secondary;
+    border-bottom: 1px solid $color-border;
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $color-border;
+      transition: background-color 0.15s ease;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: $color-gray-100;
+      }
+    }
+  }
+
+  td {
+    padding: $spacing-sm;
+    color: $color-text-primary;
+    vertical-align: middle;
+
+    @include respond-to(md) {
+      padding: $spacing-md;
+    }
+  }
+}
+
+.header {
+  padding: $spacing-sm;
+  text-align: left;
+  font-weight: 600;
+  color: $color-text-primary;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+
+  @include respond-to(md) {
+    padding: $spacing-md;
+  }
+
+  &:hover {
+    background-color: color.adjust($color-gray-100, $lightness: -3%);
+  }
+}
+
+.actionHeader {
+  composes: header;
+  cursor: default;
+  width: 48px;
+  text-align: center;
+
+  @include respond-to(md) {
+    width: 56px;
+  }
+}
+
+.imageHeader {
+  composes: header;
+  cursor: default;
+  width: 60px;
+
+  @include respond-to(md) {
+    width: 80px;
+  }
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: $border-radius-sm;
+  border: 1px solid $color-border;
+
+  @include respond-to(md) {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.title {
+  font-weight: 500;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include respond-to(md) {
+    max-width: 250px;
+  }
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-sm;
+  font-weight: 500;
+}
+
+.lowRating {
+  composes: rating;
+  color: $color-danger;
+  background-color: rgba($color-danger, 0.1);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  background: $color-background;
+  border-radius: $border-radius-md;
+
+  @include respond-to(md) {
+    min-height: 300px;
+  }
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  color: $color-text-secondary;
+  font-size: $font-size-base;
+  background: $color-background;
+  border-radius: $border-radius-md;
+  border: 1px dashed $color-border;
+  padding: $spacing-md;
+
+  @include respond-to(md) {
+    min-height: 200px;
+  }
+}

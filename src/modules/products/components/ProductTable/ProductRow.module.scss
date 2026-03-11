@@ -1,0 +1,138 @@
+@use "~assets" as *;
+@use "sass:color";
+
+.checkboxCell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.nameCell {
+  vertical-align: middle;
+}
+
+.productInfo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: $border-radius-sm;
+  border: 1px solid $color-border;
+
+  @include respond-to(md) {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  font-weight: 500;
+  color: $color-text-primary;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include respond-to(md) {
+    max-width: 350px;
+  }
+}
+
+.category {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  text-transform: capitalize;
+}
+
+.brandCell {
+  vertical-align: middle;
+  color: $color-text-primary;
+}
+
+.articleCell {
+  vertical-align: middle;
+  color: $color-text-secondary;
+  font-family: monospace;
+  font-size: $font-size-sm;
+}
+
+.ratingCell {
+  vertical-align: middle;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-sm;
+  font-weight: 600;
+  font-size: $font-size-sm;
+}
+
+.lowRating {
+  background-color: rgba($color-danger, 0.1);
+  color: $color-danger;
+}
+
+.priceCell {
+  vertical-align: middle;
+  font-weight: 500;
+  color: $color-text-primary;
+}
+
+.actionsCell {
+  vertical-align: middle;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: $color-primary;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: color.adjust($color-primary, $lightness: -10%);
+  }
+}
+
+.moreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: $border-radius-sm;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $color-bg-secondary;
+  }
+}

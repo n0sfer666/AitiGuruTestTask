@@ -1,0 +1,23 @@
+@use "~assets" as *;
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.range {
+  color: $color-text-primary;
+  font-weight: 500;
+}
+
+.label {
+  color: $color-text-secondary;
+}
+
+.total {
+  color: $color-text-primary;
+  font-weight: 500;
+}

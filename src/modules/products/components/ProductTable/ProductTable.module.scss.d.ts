@@ -1,0 +1,10 @@
+export declare const actionHeader: string;
+export declare const empty: string;
+export declare const header: string;
+export declare const imageHeader: string;
+export declare const loading: string;
+export declare const lowRating: string;
+export declare const rating: string;
+export declare const thumbnail: string;
+export declare const title: string;
+export declare const wrapper: string;

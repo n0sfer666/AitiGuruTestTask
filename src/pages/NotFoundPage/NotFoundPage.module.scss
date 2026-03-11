@@ -1,0 +1,50 @@
+@use "~assets" as *;
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-bg-tertiary;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: $spacing-lg;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 6rem;
+  font-weight: 700;
+  color: $color-primary;
+  margin: 0 0 $spacing-md;
+  line-height: 1;
+
+  @include respond-to(md) {
+    font-size: 8rem;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-xl;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin: 0 0 $spacing-sm;
+}
+
+.description {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  margin: 0 0 $spacing-xl;
+  line-height: 1.5;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+}

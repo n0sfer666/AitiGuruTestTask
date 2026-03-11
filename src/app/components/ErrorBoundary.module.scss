@@ -1,0 +1,43 @@
+@use "~assets" as *;
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-bg-tertiary;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  padding: $spacing-lg;
+}
+
+.content {
+  background-color: $color-background;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-md;
+  text-align: center;
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: 600;
+  color: $color-danger;
+  margin: 0 0 $spacing-md;
+}
+
+.message {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  margin: 0 0 $spacing-xl;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: center;
+}

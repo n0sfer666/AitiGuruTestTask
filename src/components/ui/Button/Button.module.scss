@@ -1,0 +1,140 @@
+@use "~assets" as *;
+@use "sass:color";
+
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 24px;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  font-weight: 600;
+  border: none;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.3);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+// Sizes
+.small {
+  height: 36px;
+  padding: 0 16px;
+  font-size: $font-size-xs;
+}
+
+.medium {
+  height: 48px;
+  padding: 0 20px;
+  font-size: 15px;
+
+  @include respond-to(md) {
+    height: 52px;
+    padding: 0 24px;
+    font-size: 16px;
+  }
+}
+
+.large {
+  height: 48px;
+  padding: 0 28px;
+  font-size: $font-size-lg;
+
+  @include respond-to(md) {
+    height: 56px;
+    padding: 0 32px;
+    font-size: 18px;
+  }
+}
+
+// Variants
+.primary {
+  background-color: $color-primary;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background-color: color.adjust($color-primary, $lightness: -10%);
+  }
+
+  &:active:not(:disabled) {
+    background-color: color.adjust($color-primary, $lightness: -15%);
+  }
+}
+
+.secondary {
+  background-color: transparent;
+  color: $color-text-primary;
+  border: 1px solid $color-border;
+
+  &:hover:not(:disabled) {
+    background-color: rgba($color-text-primary, 0.05);
+    border-color: color.adjust($color-border, $lightness: -10%);
+  }
+
+  &:active:not(:disabled) {
+    background-color: rgba($color-text-primary, 0.1);
+  }
+}
+
+.danger {
+  background-color: $color-danger;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background-color: color.adjust($color-danger, $lightness: -10%);
+  }
+
+  &:active:not(:disabled) {
+    background-color: color.adjust($color-danger, $lightness: -15%);
+  }
+}
+
+.icon {
+  background-color: transparent;
+  color: $color-text-primary;
+  border: 1px solid $color-border;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+
+  &:hover:not(:disabled) {
+    background-color: $color-bg-secondary;
+    border-color: $color-gray-400;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $color-gray-100;
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: $color-text-primary;
+
+  &:hover:not(:disabled) {
+    background-color: rgba($color-text-primary, 0.05);
+  }
+
+  &:active:not(:disabled) {
+    background-color: rgba($color-text-primary, 0.1);
+  }
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

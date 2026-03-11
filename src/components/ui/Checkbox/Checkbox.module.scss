@@ -1,0 +1,83 @@
+@use "~assets" as *;
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+
+  &:checked + .box {
+    background-color: $color-primary;
+    border-color: $color-primary;
+
+    .checkIcon {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &:focus-visible + .box {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+
+  &:disabled + .box {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.box {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $color-gray-300;
+  border-radius: 6px;
+  background-color: $color-background;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+
+  @include respond-to(md) {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    border-color: $color-primary;
+  }
+}
+
+.checkIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+  color: white;
+
+  @include respond-to(md) {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-gray-600;
+  line-height: 1.4;
+
+  @include respond-to(md) {
+    font-size: 15px;
+  }
+}
