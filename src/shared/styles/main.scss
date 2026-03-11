@@ -1,7 +1,1 @@
-// Forward all design tokens (variables, functions, mixins)
-@forward 'functions';
-@forward 'variables';
-@forward 'mixins';
-
-// Use reset to output CSS
-@use 'reset';
+@use "reset";

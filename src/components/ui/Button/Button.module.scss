@@ -15,6 +15,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   outline: none;
+  gap: $spacing-sm;
 
   &:focus-visible {
     box-shadow: 0 0 0 3px rgba($color-primary, 0.3);

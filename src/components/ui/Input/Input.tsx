@@ -16,6 +16,7 @@ export const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
       rightElement,
       clearable,
       type = "text",
+      size = "large",
       value,
       onChange,
       ...props
@@ -58,6 +59,9 @@ export const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
       styles.field,
       icon && styles.withLeftIcon,
       (showClearButton || rightElement) && styles.withRightElement,
+      size === "large" && styles.large,
+      size === "medium" && styles.medium,
+      size === "small" && styles.small,
       error && styles.hasError,
       className,
     ]

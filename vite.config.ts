@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "~assets": path.resolve(__dirname, "./src/shared/styles/main.scss"),
+      "~assets": path.resolve(__dirname, "./src/shared/styles"),
       "@app": path.resolve(__dirname, "./src/app"),
       "@pages": path.resolve(__dirname, "./src/pages"),
       "@modules": path.resolve(__dirname, "./src/modules"),

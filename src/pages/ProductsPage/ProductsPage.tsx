@@ -137,51 +137,53 @@ export const ProductsPage: FC = () => {
           </div>
         ) :
         (
-          <>
-            <div className={styles.tableHeader}>
-              <h2 className={styles.tableTitle}>Все позиции</h2>
+          <ProductTable
+            header={(
+              <div className={styles.tableHeader}>
+                <h2 className={styles.tableTitle}>Все позиции</h2>
 
-              <div className={styles.tableActions}>
-                <Button variant="icon" onClick={fetchProducts} title="Обновить">
-                  <Icon.RefreshCw size={20} color={iconColor.gray500} />
-                </Button>
+                <div className={styles.tableActions}>
+                  <Button variant="icon" onClick={fetchProducts} title="Обновить">
+                    <Icon.RefreshCw size={20} color={iconColor.gray500} />
+                  </Button>
 
-                <Button
-                  variant="primary"
-                  size="sm"
-                  onClick={() => setShowAddForm(true)}
-                >
-                  <Icon.Plus size={16} inCircle color={iconColor.white} />
-                  Добавить
-                </Button>
-              </div>
-            </div>
-
-            <ProductTable
-              products={products}
-              loading={loading}
-              onSort={handleSort}
-              sortConfig={sortConfig}
-            />
-
-            {products.length > 0 && (
-              <div className={styles.paginationContainer}>
-                <PaginationInfo
-                  currentPage={currentPage}
-                  itemsPerPage={ITEMS_PER_PAGE}
-                  totalItems={totalProducts}
-                />
-
-                {totalPages > 1 && (
-                  <Pagination
-                    currentPage={currentPage}
-                    totalPages={totalPages}
-                    onPageChange={handlePageChange}
-                  />
-                )}
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    onClick={() => setShowAddForm(true)}
+                  >
+                    <Icon.Plus size={16} inCircle color={iconColor.white} />
+                    Добавить
+                  </Button>
+                </div>
               </div>
             )}
-          </>
+            products={products}
+            loading={loading}
+            onSort={handleSort}
+            sortConfig={sortConfig}
+            footer={(
+              <>
+                {products.length > 0 && (
+                  <div className={styles.paginationContainer}>
+                    <PaginationInfo
+                      currentPage={currentPage}
+                      itemsPerPage={ITEMS_PER_PAGE}
+                      totalItems={totalProducts}
+                    />
+
+                    {totalPages > 1 && (
+                      <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={handlePageChange}
+                      />
+                    )}
+                  </div>
+                )}
+              </>
+            )}
+          />
         )}
     </div>
   );

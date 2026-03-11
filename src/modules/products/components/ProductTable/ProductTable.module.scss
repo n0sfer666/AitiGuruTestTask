@@ -3,8 +3,12 @@
 
 .wrapper {
   width: 100%;
+  padding: 30px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-sm;
+  background: $color-background;
 
   table {
     width: 100%;
@@ -12,25 +16,16 @@
     border-collapse: separate;
     border-spacing: 0;
     font-size: $font-size-sm;
-    border-radius: $border-radius-md;
-    box-shadow: $shadow-sm;
-    background: $color-background;
     overflow: hidden;
-  }
 
-  thead {
-    background-color: $color-bg-secondary;
-    border-bottom: 1px solid $color-border;
+    th {
+      border-bottom: 1px solid $color-border;
+    }
   }
 
   tbody {
     tr {
-      border-bottom: 1px solid $color-border;
       transition: background-color 0.15s ease;
-
-      &:last-child {
-        border-bottom: none;
-      }
 
       &:hover {
         background-color: $color-gray-100;
@@ -39,6 +34,7 @@
   }
 
   td {
+    border-bottom: 1px solid $color-border;
     padding: $spacing-sm;
     color: $color-text-primary;
     vertical-align: middle;

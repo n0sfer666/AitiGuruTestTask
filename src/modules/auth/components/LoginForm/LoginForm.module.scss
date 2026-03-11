@@ -5,7 +5,8 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 527px;
+  width: 100%;
+  max-width: 527px;
   background-color: $color-background;
   border-radius: $border-radius-3xl; // 40px per Figma
   box-shadow: $shadow-card; // 0 24px 32px rgba(0,0,0,0.04)
@@ -16,7 +17,6 @@
 .innerFrame {
   display: flex;
   flex-direction: column;
-  width: 100%;
   border-radius: 34px; // Per Figma inner frame
   padding: 48px;
 
@@ -90,6 +90,8 @@
   flex-direction: column;
   gap: 32px; // Figma itemSpacing
   margin-bottom: 32px; // Figma itemSpacing
+  width: 100%;
+  min-width: 0;
 }
 
 .checkboxWrapper {

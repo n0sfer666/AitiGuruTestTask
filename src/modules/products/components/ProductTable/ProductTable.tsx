@@ -33,6 +33,8 @@ const getSortIndicator = (
 };
 
 export const ProductTable: FC<ProductTableProps> = ({
+  header,
+  footer,
   products,
   loading,
   onSort,
@@ -61,16 +63,22 @@ export const ProductTable: FC<ProductTableProps> = ({
 
   if (products.length === 0) {
     return (
-      <div className={styles.empty}>
-        <Typography variant="body" color="secondary" align="center">
-          Товары не найдены
-        </Typography>
-      </div>
+      <>
+        {header}
+
+        <div className={styles.empty}>
+          <Typography variant="body" color="secondary" align="center">
+            Товары не найдены
+          </Typography>
+        </div>
+      </>
     );
   }
 
   return (
     <div className={styles.wrapper}>
+      {header}
+
       <table>
         <thead>
           <tr>
@@ -105,6 +113,8 @@ export const ProductTable: FC<ProductTableProps> = ({
           ))}
         </tbody>
       </table>
+
+      {footer}
     </div>
   );
 };

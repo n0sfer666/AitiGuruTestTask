@@ -3,7 +3,8 @@
 // Main input field
 .field {
   width: 100%;
-  height: 52px;
+  max-width: 100%;
+  min-width: 0;
   padding: 14px 16px;
   font-family: $font-family;
   font-size: $font-size-base;
@@ -14,10 +15,33 @@
   outline: none;
   transition: all 0.2s ease;
 
+  &.large {
+    height: 55px;
+  }
+
+  &.medium {
+    height: 35px;
+  }
+
+  &.small {
+    height: 20px;
+  }
+
   @include respond-to(md) {
-    height: 56px;
     padding: 16px 20px;
     font-size: 16px;
+
+    &.large {
+      height: 50px;
+    }
+
+    &.medium {
+      height: 30px;
+    }
+
+    &.small {
+      height: 20px;
+    }
   }
 
   &::placeholder {
@@ -70,12 +94,14 @@
   flex-direction: column;
   gap: 8px;
   width: 100%;
+  min-width: 0;
 }
 
 // Container for input + icons
 .container {
   position: relative;
   width: 100%;
+  min-width: 0;
 }
 
 // Label text
